@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<title>FORJA</title>
+<style>
+html,body{margin:0;height:100%;background:#000;color:#f5f5f7;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px}
+img{width:96px;height:96px;border-radius:22px}
+h1{margin:0;font-size:3rem;letter-spacing:.14em;color:#ff6a1f}
+p{color:#8a8a93;margin:0;font-size:.9rem}
+a{display:inline-block;margin-top:8px;padding:14px 26px;border-radius:14px;background:#ff6a1f;color:#000;font-weight:800;text-decoration:none}
+</style>
+</head>
+<body>
+<img src="icon-192.png" alt="">
+<h1>FORJA</h1>
+<p id="t">Abrindo o app...</p>
+<a id="l" href="#">Abrir o FORJA</a>
+<script>
+// >>> TROQUE PELO SEU LINK /exec (o endereço que termina em /exec) <<<
+var APP_URL='https://script.google.com/macros/s/AKfycbxgwgWac0g43YvcP8BRO-RVx-Mv0-30fvdCOWzoiax7dYGWtwzS3Cx9ns45IgEw2Q06/exec';
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){})}
+document.getElementById('l').href=APP_URL;
+if(/^https:\/\/script\.google\.com\//.test(APP_URL)){setTimeout(function(){location.replace(APP_URL)},600)}
+else{document.getElementById('t').textContent='Link do app não configurado.'}
+</script>
+</body>
+</html>
